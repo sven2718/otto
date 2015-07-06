@@ -289,6 +289,14 @@ func (self *_parser) scan() (tkn token.Token, literal string, idx file.Idx) {
 				if err != nil {
 					tkn = token.ILLEGAL
 				}
+			case '`':
+				insertSemicolon = true
+				tkn = token.STRING
+				var err error
+				literal, err = self.scanMultiString(self.chrOffset - 1)
+				if err != nil {
+					tkn = token.ILLEGAL
+				}				
 			default:
 				self.errorUnexpected(idx, chr)
 				tkn = token.ILLEGAL
@@ -507,6 +515,15 @@ func (self *_parser) scanEscape(quote rune) {
 		value = value*base + digit
 		self.read()
 	}
+}
+
+func (self *_parser) scanMultiString(offset int) (string, error) { 
+	for self.chr != '`' {
+		self.read()
+	}
+	self.read()
+
+	return string(self.str[offset:self.chrOffset]), nil	
 }
 
 func (self *_parser) scanString(offset int) (string, error) {
