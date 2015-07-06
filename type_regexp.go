@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"unicode/utf8"
 
-	"github.com/robertkrimen/otto/parser"
+	"github.com/sven2718/otto/parser"
 )
 
 type _regExpObject struct {

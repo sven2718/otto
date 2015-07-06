@@ -5,7 +5,7 @@ import (
 	"encoding/gob"
 	"errors"
 
-	"github.com/robertkrimen/otto/parser"
+	"github.com/sven2718/otto/parser"
 )
 
 var ErrVersion = errors.New("version mismatch")

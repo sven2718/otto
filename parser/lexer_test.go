@@ -4,8 +4,8 @@ import (
 	"../terst"
 	"testing"
 
-	"github.com/robertkrimen/otto/file"
-	"github.com/robertkrimen/otto/token"
+	"github.com/sven2718/otto/file"
+	"github.com/sven2718/otto/token"
 )
 
 var tt = terst.Terst
