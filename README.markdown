@@ -4,6 +4,10 @@
 
 Package otto is a JavaScript parser and interpreter written natively in Go.
 
+This is a very simple fork that attempts to support "as is" multiline quoted strings, roughly as per javascript ES6.
+
+This fork is basically just a quick personal hack.  It's not supported or maintained.  Unless you're desperate for multiline support, you should really be using robertkrimen's master branch.
+
 http://godoc.org/github.com/robertkrimen/otto
 
     import (
